@@ -1,12 +1,12 @@
 import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
-import { personal, socialLinks } from "../config/personal";
+import { emailComposeUrl, socialLinks } from "../config/personal";
 import { usePreferences } from "../i18n/context";
 export function SocialLinks({ labels = false }: { labels?: boolean }) {
   const { t } = usePreferences();
   const links = [
     { name: "LinkedIn", url: socialLinks.linkedin, Icon: Linkedin },
     { name: "GitHub", url: socialLinks.github, Icon: Github },
-    { name: t.common.email, url: `mailto:${personal.email}`, Icon: Mail },
+    { name: t.common.email, url: emailComposeUrl, Icon: Mail },
   ];
   return (
     <div className={`social-links ${labels ? "with-labels" : ""}`}>

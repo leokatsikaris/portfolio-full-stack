@@ -6,7 +6,9 @@ import { Contact } from "./sections/Contact";
 import { usePreferences } from "./i18n/context";
 import { useReveal } from "./hooks/useReveal";
 // An optional detail for anyone curious enough to look underneath the interface.
-console.info("<LeonelKatsikaris />\n  interface → API → data\n  // The details matter on both sides of the interface.");
+console.info(
+  "<LeonelKatsikaris />\n  interface → API → data\n  // The details matter on both sides of the interface.",
+);
 export default function App() {
   const { t } = usePreferences();
   useReveal();

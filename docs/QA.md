@@ -36,3 +36,18 @@ Build final: JavaScript 263.21 kB (81.46 kB gzip), CSS 36.37 kB (10.79 kB gzip).
 El sitio permanece como SPA estática: la metadata inicial para crawlers es española y la inglesa se actualiza al seleccionar el idioma en el navegador. No se publicaron rutas SEO por idioma. No se desplegó en Vercel ni se configuró un dominio, ya que la entrega pedida es un proyecto preparado para deployment.
 
 Antes de publicación real: completar enlaces sociales, dominio y los campos pendientes que se deseen mostrar; reemplazar el CV solo cuando exista una nueva versión autorizada.
+
+## Iteración de superficie y ampliación de experiencias — 22/09/2026
+
+- Se mantuvieron tokens, fuente, estructura y dirección visual.
+- Hero: sonda técnica temporal, desplazamiento máximo de título de 1,5 px; sin cursor personalizado ni librerías añadidas.
+- Tecnologías: énfasis coordinado React/TypeScript, Node.js/PostgreSQL y Jest/React Testing Library. Experiencias: línea e índice activos al leer.
+- GitHub y LinkedIn configurados con URLs del usuario.
+- Descripciones y stacks ampliados con información aportada; Somos Olea completado en ES/EN salvo fechas y resultados no documentados.
+- Email: redacción web en Gmail, sin envío automático, y copia al portapapeles confirmada visualmente. Gmail puede requerir sesión; no se probó envío ni se envió ningún mensaje.
+- Revisión visual con navegador: desktop 1440 px y mobile 390 px, ambos temas, ES/EN, hero, tecnologías, experiencias y contacto. Sin overflow horizontal en las dimensiones revisadas.
+- Movimiento real del puntero activó la sonda. React/TypeScript mostraron énfasis simultáneo; el índice de Somos Olea reflejó la entrada activa.
+- Apertura de Aulasneo con Enter verificada, foco en summary. Sin errores/warnings capturados en consola.
+- Reduced motion y touch: pruebas unitarias del controlador verifican bloqueo de seguimiento, cancelación al cambiar preferencias y limpieza de listeners. CSS revisado: sonda oculta y transforms desactivados. La herramienta del navegador no expone emulación de esta preferencia; no se afirma una prueba visual bajo emulación.
+- Lint, TypeScript (incluido en build), build de producción y 12 tests aprobados.
+- JS ~84 kB gzip, CSS ~12 kB gzip. Sin dependencias nuevas. No se realizó un perfil de FPS ni una auditoría Lighthouse.

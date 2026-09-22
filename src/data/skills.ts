@@ -1,4 +1,12 @@
 import type { SkillGroup } from "../types";
+export const technologyFamilies: Record<string, string> = {
+  React: "interface",
+  TypeScript: "interface",
+  "Node.js": "data",
+  PostgreSQL: "data",
+  Jest: "testing",
+  "React Testing Library": "testing",
+};
 export const skills: SkillGroup[] = [
   {
     id: "frontend",

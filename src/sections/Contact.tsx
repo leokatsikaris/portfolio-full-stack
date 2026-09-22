@@ -1,10 +1,22 @@
 import { ArrowUpRight, ArrowUp } from "lucide-react";
-import { personal } from "../config/personal";
+import { personal, emailComposeUrl } from "../config/personal";
+import { useState } from "react";
 import { SocialLinks } from "../components/SocialLinks";
 import { CvLink } from "../components/CvLink";
 import { usePreferences } from "../i18n/context";
 export function Contact() {
   const { t } = usePreferences();
+  const [copyStatus, setCopyStatus] = useState<"copied" | "copyFailed" | null>(
+    null,
+  );
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(personal.email);
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("copyFailed");
+    }
+  };
   return (
     <section id="contact" tabIndex={-1} className="contact-section">
       <div className="container">
@@ -27,13 +39,29 @@ export function Contact() {
           <p>{t.contact.description}</p>
           <div className="contact-action">
             <a
-              href={`mailto:${personal.email}`}
+              href={emailComposeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="button button-primary"
             >
               {t.contact.cta}
               <ArrowUpRight size={19} aria-hidden="true" />
             </a>
-            <a className="email-link" href={`mailto:${personal.email}`}>
+            <div className="email-alternatives">
+              <span>{t.common.gmail}</span>
+              <button type="button" className="text-link" onClick={copyEmail}>
+                {t.common.copyEmail}
+              </button>
+              <span role="status">
+                {copyStatus ? t.common[copyStatus] : ""}
+              </span>
+            </div>
+            <a
+              className="email-link"
+              href={emailComposeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {personal.email}
             </a>
           </div>

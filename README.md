@@ -8,8 +8,8 @@ Abrí una terminal en la carpeta del proyecto:
 
 ```powershell
 cd C:\Users\leone\Documents\ChatGPT\portfolio-full-stack
-npm install
-npm run dev
+npm.cmd install
+npm.cmd run dev
 ```
 
 Si las dependencias ya están instaladas, alcanza con `npm run dev`. Vite muestra la dirección local (normalmente `http://localhost:5173`; el script usa `127.0.0.1`). Para una instalación reproducible desde el lockfile usar `npm ci`.
@@ -66,13 +66,13 @@ Se conservaron React/Vite, las dependencias, el CV y los componentes que seguía
 | Motion y reduced motion                        | `src/styles/motion.css`  |
 | Composición y responsive                       | `src/styles.css`         |
 
-LinkedIn/GitHub permanecen vacíos: se muestran como enlaces pendientes, sin destinos ficticios ni controles rotos. Agregar URLs completas HTTPS verificadas para activarlos.
+LinkedIn y GitHub están configurados con las URLs proporcionadas. Los accesos de email abren la redacción de Gmail en otra pestaña (puede requerir iniciar sesión); el botón Copiar email permite usar cualquier otro proveedor sin depender de un cliente de correo del sistema.
 
 ## Experiencia y placeholders
 
 Las experiencias están ordenadas como se solicitó: Phinxlab, Aulasneo, H+Trace, Somos Olea. Cada entrada contiene identidad y fechas compartidas más `content.es` y `content.en` con rol, proyecto, descripción, contexto, contribuciones e impacto. Para sumar otra experiencia, agregar un objeto de tipo `Experience`; no hace falta editar componentes.
 
-Las fechas conocidas y los hechos de H+Trace proceden del CV original proporcionado. Su impacto no está documentado: permanece en `null` y muestra un estado pendiente. Somos Olea contiene TODO_COMPANY_ROLE, TODO_PERIOD, TODO_DESCRIPTION, TODO_PROJECT, TODO_HEADLINE, TODO_CONTEXT, TODO_CONTRIBUTION, TODO_IMPACT y TODO_TECHNOLOGIES en `pending`. Completar los valores reales en ambos idiomas y eliminar las marcas resueltas. No se muestran esos identificadores internos al visitante; se presentan placeholders traducidos.
+Las fechas conocidas y los hechos de H+Trace proceden del CV original proporcionado. Su impacto no está documentado: permanece en `null` y muestra un estado pendiente. Somos Olea incluye el proyecto y las contribuciones proporcionadas, traducidas al español e inglés. Conserva TODO_PERIOD y TODO_IMPACT hasta disponer de fechas y resultados verificables. No se muestran esos identificadores internos al visitante; se presentan placeholders traducidos.
 
 Formato de fechas: `YYYY-MM`; se muestran con `Intl.DateTimeFormat`. `current: true` identifica la experiencia actual. Los casos comparten el mismo componente, son desplegables nativos y no contienen material propietario.
 
@@ -116,3 +116,9 @@ Un H1, cuatro secciones principales, enlaces reales, landmarks, foco visible, sk
 Se usan transform/opacity para entradas y microinteracciones. Un observer compartido revela contenido una vez; el listener de scroll usa requestAnimationFrame y solo cambia el estado React al cambiar la sección activa. Con reduced motion se desactiva motion y smooth scroll. No hay loops decorativos, imágenes remotas o JS de animación adicional.
 
 Decisiones y fuentes: [docs/DESIGN.md](docs/DESIGN.md). Verificación: [docs/QA.md](docs/QA.md).
+
+## Interacción de superficie
+
+El hero revela una relación técnica bajo el título al mover un mouse: React → TypeScript o Node.js → PostgreSQL. El desplazamiento del título está limitado a 1,5 px. La lógica vive en `src/hooks/useSurfaceProbe.ts`; los detalles visuales en `src/styles/signature.css`. Usa refs, variables CSS y requestAnimationFrame, sin actualizaciones React por movimiento. Cancela frames al salir, hacer scroll, cambiar preferencias o desmontarse. Se desactiva en touch, pantallas menores a 901 px y reduced motion.
+
+Las tecnologías relacionadas se destacan juntas mediante CSS y el índice de experiencia sigue la lectura usando el listener de scroll existente. El único easter egg es un mensaje opcional en la consola. No se añadieron dependencias, colores ni fuentes. En PowerShell, usar `npm.cmd` evita el bloqueo de `npm.ps1` sin modificar políticas del sistema.

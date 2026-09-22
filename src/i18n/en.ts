@@ -20,6 +20,10 @@ export const en: Messages = {
     dark: "Switch to dark mode",
   },
   common: {
+    gmail: "Opens Gmail. You can also copy the address.",
+    copyEmail: "Copy email",
+    copied: "Email copied.",
+    copyFailed: "Could not copy. Select the address below.",
     skip: "Skip to content",
     cv: "Download CV",
     cvPending: "CV coming soon",

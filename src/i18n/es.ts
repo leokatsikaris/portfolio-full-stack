@@ -19,6 +19,10 @@ export const es = {
     dark: "Activar modo oscuro",
   },
   common: {
+    gmail: "Se abre Gmail. También podés copiar la dirección.",
+    copyEmail: "Copiar email",
+    copied: "Email copiado.",
+    copyFailed: "No se pudo copiar. Seleccioná la dirección que aparece debajo.",
     skip: "Saltar al contenido",
     cv: "Descargar CV",
     cvPending: "CV próximamente",

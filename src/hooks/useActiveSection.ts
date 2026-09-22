@@ -4,20 +4,28 @@ export function useActiveSection() {
   const [active, setActive] = useState<string>("home");
   useEffect(() => {
     let frame = 0;
-    const entries = Array.from(document.querySelectorAll<HTMLElement>(".experience-entry"));
+    const entries = Array.from(
+      document.querySelectorAll<HTMLElement>(".experience-entry"),
+    );
     let reading = "";
     const update = () => {
       const threshold = window.innerHeight * 0.35;
-      const visible = entries.filter((entry) => {
-        const rect = entry.getBoundingClientRect();
-        return rect.top < window.innerHeight * .65 && rect.bottom > threshold;
-      })[0]?.id ?? "";
+      const visible =
+        entries.filter((entry) => {
+          const rect = entry.getBoundingClientRect();
+          return (
+            rect.top < window.innerHeight * 0.65 && rect.bottom > threshold
+          );
+        })[0]?.id ?? "";
       if (visible !== reading) {
         reading = visible;
         for (const entry of entries) {
           entry.toggleAttribute("data-reading", entry.id === reading);
-          const link = document.querySelector(`.experience-aside a[href="#${entry.id}"]`);
-          if (entry.id === reading) link?.setAttribute("aria-current", "location");
+          const link = document.querySelector(
+            `.experience-aside a[href="#${entry.id}"]`,
+          );
+          if (entry.id === reading)
+            link?.setAttribute("aria-current", "location");
           else link?.removeAttribute("aria-current");
         }
       }

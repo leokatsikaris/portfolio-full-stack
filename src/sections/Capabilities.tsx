@@ -1,6 +1,6 @@
 import { ArrowDownRight, Sparkles } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
-import { skills } from "../data/skills";
+import { skills, technologyFamilies } from "../data/skills";
 import { usePreferences } from "../i18n/context";
 export function Capabilities() {
   const { t } = usePreferences();
@@ -32,11 +32,10 @@ export function Capabilities() {
             </div>
             <ul className="technology-items">
               {group.items.map((item) => (
-                <li key={item} data-family={
-                  ["React", "TypeScript"].includes(item) ? "interface" :
-                  ["Node.js", "PostgreSQL"].includes(item) ? "data" :
-                  ["Jest", "React Testing Library"].includes(item) ? "testing" : undefined
-                }>
+                <li
+                  key={item}
+                  data-family={technologyFamilies[item]}
+                >
                   <span>{item}</span>
                 </li>
               ))}

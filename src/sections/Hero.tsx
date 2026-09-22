@@ -27,13 +27,15 @@ export function Hero() {
       <div className="hero-composition" ref={surface}>
         <h1 className="hero-title">
           <span className="title-line">
-            <span><span className="title-surface">{t.hero.titleFirst}</span></span>
+            <span>
+              <span className="title-surface">{t.hero.titleFirst}</span>
+            </span>
           </span>
           <span className="title-line">
             <span>
               <span className="title-surface">
-              {t.hero.titleSecond}
-              <span className="title-period">.</span>
+                {t.hero.titleSecond}
+                <span className="title-period">.</span>
               </span>
             </span>
           </span>
@@ -50,8 +52,12 @@ export function Hero() {
           </span>
         </div>
         <div className="surface-probe mono" aria-hidden="true">
-          <span className="probe-interface">&#123; React <i>→</i> TypeScript &#125;</span>
-          <span className="probe-data">&#123; Node.js <i>→</i> PostgreSQL &#125;</span>
+          <span className="probe-interface">
+            &#123; React <i>→</i> TypeScript &#125;
+          </span>
+          <span className="probe-data">
+            &#123; Node.js <i>→</i> PostgreSQL &#125;
+          </span>
         </div>
       </div>
       <div className="hero-bottom">
