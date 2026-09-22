@@ -116,9 +116,10 @@ test("experience order, known H+Trace facts and explicit placeholders are preser
     pending.content.es.role,
     "Desarrollo fullstack · foco en backend",
   );
-  assert.equal(pending.start, null);
+  assert.equal(pending.start, "2021-09");
+  assert.equal(pending.end, "2021-10");
   assert.ok(pending.stack.includes("Sequelize"));
-  assert.equal(pending.pending.period, "TODO_PERIOD");
+  assert.equal(pending.pending.period, undefined);
   assert.equal(pending.content.es.impact, null);
   assert.ok(pending.content.en.work.some((text) => text.includes("wishlist")));
 });

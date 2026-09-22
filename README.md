@@ -72,7 +72,7 @@ LinkedIn y GitHub están configurados con las URLs proporcionadas. Los accesos d
 
 Las experiencias están ordenadas como se solicitó: Phinxlab, Aulasneo, H+Trace, Somos Olea. Cada entrada contiene identidad y fechas compartidas más `content.es` y `content.en` con rol, proyecto, descripción, contexto, contribuciones e impacto. Para sumar otra experiencia, agregar un objeto de tipo `Experience`; no hace falta editar componentes.
 
-Las fechas conocidas y los hechos de H+Trace proceden del CV original proporcionado. Su impacto no está documentado: permanece en `null` y muestra un estado pendiente. Somos Olea incluye el proyecto y las contribuciones proporcionadas, traducidas al español e inglés. Conserva TODO_PERIOD y TODO_IMPACT hasta disponer de fechas y resultados verificables. No se muestran esos identificadores internos al visitante; se presentan placeholders traducidos.
+Las fechas conocidas y los hechos de H+Trace proceden del CV original proporcionado. Su impacto no está documentado: permanece en `null` y muestra un estado pendiente. Somos Olea incluye el proyecto y las contribuciones proporcionadas, traducidas al español e inglés. El período es septiembre–octubre de 2021. Conserva TODO_IMPACT hasta disponer de resultados verificables. No se muestran esos identificadores internos al visitante; se presentan placeholders traducidos.
 
 Formato de fechas: `YYYY-MM`; se muestran con `Intl.DateTimeFormat`. `current: true` identifica la experiencia actual. Los casos comparten el mismo componente, son desplegables nativos y no contienen material propietario.
 

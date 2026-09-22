@@ -162,8 +162,8 @@ export const experience: Experience[] = [
   {
     id: "somos-olea",
     company: "Somos Olea",
-    start: null,
-    end: null,
+    start: "2021-09",
+    end: "2021-10",
     stack: [
       "JavaScript",
       "HTML",
@@ -180,7 +180,6 @@ export const experience: Experience[] = [
       "Scrum",
     ],
     pending: {
-      period: "TODO_PERIOD",
       impact: "TODO_IMPACT: add only an outcome you can substantiate.",
     },
     content: {
