@@ -42,7 +42,14 @@ export function Header() {
         }
       }}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+        // Touch browsers can blur the focused link with a null relatedTarget
+        // before dispatching click. Hiding the nav then cancels that activation.
+        // Outside pointers are handled separately; only a known focus target
+        // outside the header should close the menu here.
+        if (
+          event.relatedTarget &&
+          !event.currentTarget.contains(event.relatedTarget)
+        ) setOpen(false);
       }}
     >
       <div className="reading-progress" aria-hidden="true" />
