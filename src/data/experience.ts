@@ -1,5 +1,5 @@
 import type { Experience } from "../types";
-// Facts supplied by Leonel and the original CV. Unknown dates/outcomes remain explicit.
+// Experience facts and deliverables supplied by Leonel. No invented metrics.
 export const experience: Experience[] = [
   {
     id: "phinxlab",
@@ -17,7 +17,6 @@ export const experience: Experience[] = [
       "Material UI",
       "AWS",
       "Git",
-      "Java",
       "Spring Boot",
       "Scrum",
     ],
@@ -40,7 +39,7 @@ export const experience: Experience[] = [
           "Desarrollo sistemas administrativos y funcionalidades para gestionar datos institucionales y certificaciones.",
         ],
         impact:
-          "Contribuyo a la evolución, estabilidad y performance de una plataforma del ámbito educativo público, cuidando tanto su uso diario como su mantenimiento a largo plazo.",
+          "Sistemas de backoffice con roles y permisos, gestión de datos institucionales y certificaciones, y migraciones de base de datos con integridad transaccional.",
       },
       en: {
         role: "Fullstack Developer",
@@ -59,7 +58,7 @@ export const experience: Experience[] = [
           "Develop administrative systems and features for managing institutional data and certifications.",
         ],
         impact:
-          "Contribute to the evolution, stability and performance of a public education platform, considering both daily use and long-term maintenance.",
+          "Backoffice systems with roles and permissions, institutional data and certification management, and database migrations with transactional integrity.",
       },
     },
   },
@@ -71,7 +70,6 @@ export const experience: Experience[] = [
     stack: [
       "React",
       "TypeScript",
-      "Java",
       "Spring Boot",
       "Node.js",
       "Python",
@@ -89,13 +87,13 @@ export const experience: Experience[] = [
           "Una solución monolítica basada en HTML que debía evolucionar hacia una arquitectura de microservicios.",
         work: [
           "Participé en la migración del monolito hacia una arquitectura moderna basada en microservicios.",
-          "Trabajé con React, Java y Python en la evolución del frontend y backend de la plataforma.",
+          "Trabajé con React y Python en la evolución del frontend y backend de la plataforma.",
           "Desarrollé módulos frontend con React y TypeScript, dashboards estadísticos y sistemas de analytics.",
           "Construí funcionalidades para configurar y personalizar entornos educativos.",
           "Implementé funcionalidades backend con Node.js y Python e integraciones con servicios de AWS.",
         ],
         impact:
-          "Contribuí a la modernización técnica y a la evolución del producto educativo.",
+          "Dashboards estadísticos y herramientas de analytics para clientes institucionales, junto con módulos para configurar y personalizar entornos educativos en Open edX.",
       },
       en: {
         role: "Fullstack Developer",
@@ -107,13 +105,13 @@ export const experience: Experience[] = [
           "An HTML-based monolithic solution evolving toward a microservices architecture.",
         work: [
           "Participated in the migration from the monolith to a modern microservices architecture.",
-          "Worked with React, Java and Python as the platform’s frontend and backend evolved.",
+          "Worked with React and Python as the platform’s frontend and backend evolved.",
           "Developed frontend modules with React and TypeScript, statistical dashboards and analytics tools.",
           "Built features for configuring and customizing learning environments.",
           "Implemented backend features with Node.js and Python and integrations with AWS services.",
         ],
         impact:
-          "Contributed to the technical modernization and evolution of the educational product.",
+          "Statistical dashboards and analytics tools for institutional clients, alongside modules for configuring and customizing Open edX learning environments.",
       },
     },
   },
@@ -122,10 +120,7 @@ export const experience: Experience[] = [
     company: "H+Trace",
     start: "2022-02",
     end: "2022-10",
-    stack: ["React", "GraphQL", "Recharts", "CSS", "TypeScript", "Java"],
-    pending: {
-      impact: "TODO_IMPACT: add only an outcome you can substantiate.",
-    },
+    stack: ["React", "GraphQL", "Recharts", "CSS", "TypeScript"],
     content: {
       es: {
         role: "Frontend Developer",
@@ -140,7 +135,8 @@ export const experience: Experience[] = [
           "Implementé visualizaciones de datos: gráficos de barras, donas e indicadores de progreso.",
           "Integré datos mediante el consumo de APIs GraphQL.",
         ],
-        impact: null,
+        impact:
+          "Dashboards que reúnen datos de APIs GraphQL en tablas de reportes, gráficos de barras, donas e indicadores de progreso para el seguimiento de operaciones logísticas.",
       },
       en: {
         role: "Frontend Developer",
@@ -155,7 +151,8 @@ export const experience: Experience[] = [
           "Implemented data visualizations: bar charts, donut charts and progress indicators.",
           "Integrated data by consuming GraphQL APIs.",
         ],
-        impact: null,
+        impact:
+          "Dashboards bringing GraphQL API data into reporting tables, bar charts, donut charts and progress indicators for monitoring logistics operations.",
       },
     },
   },
@@ -179,9 +176,6 @@ export const experience: Experience[] = [
       "Git",
       "Scrum",
     ],
-    pending: {
-      impact: "TODO_IMPACT: add only an outcome you can substantiate.",
-    },
     content: {
       es: {
         role: "Desarrollo fullstack · foco en backend",
@@ -198,7 +192,8 @@ export const experience: Experience[] = [
           "Implementé interacciones mediante el envío de emails.",
           "Desarrollé el sistema de gestión de turnos para usuarios y administración.",
         ],
-        impact: null,
+        impact:
+          "Funcionalidades de carrito, lista de deseos y órdenes, filtros y ordenamiento de productos, interacciones por email y gestión de turnos para usuarios y administración.",
       },
       en: {
         role: "Fullstack development · backend focus",
@@ -215,7 +210,8 @@ export const experience: Experience[] = [
           "Implemented interactions through email delivery.",
           "Developed the appointment management system for users and administrators.",
         ],
-        impact: null,
+        impact:
+          "Shopping cart, wishlist and order features, product filtering and sorting, email interactions and appointment management for users and administrators.",
       },
     },
   },

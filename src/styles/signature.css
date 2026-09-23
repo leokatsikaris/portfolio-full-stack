@@ -18,47 +18,30 @@
 .hero-composition {
   position: relative;
 }
+
+/* The solid title stays fixed; only an inspection layer is revealed. */
 .hero-title .title-surface {
   display: inline-block;
-  transform: translate(var(--surface-x, 0px), var(--surface-y, 0px));
+  position: relative;
 }
-.surface-probe {
+.hero-title .title-ink {
   position: absolute;
-  top: calc(100% + 13px);
-  left: 0;
-  width: 240px;
-  height: 25px;
+  inset: 0;
   pointer-events: none;
-  color: var(--accent);
-  font-size: 11px;
+  user-select: none;
   opacity: 0;
-  transform: translateX(var(--probe-x, 0px));
-  transition: opacity var(--duration) var(--ease);
+  -webkit-text-stroke: 1px var(--accent);
+  color: transparent;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 7px, var(--accent) 7px 8px),
+    repeating-linear-gradient(90deg, transparent 0 7px, var(--accent) 7px 8px),
+    linear-gradient(var(--bg), var(--bg));
+  background-clip: text;
+  -webkit-background-clip: text;
+  clip-path: circle(125px at var(--probe-x, -200px) var(--probe-y, -200px));
+  transition: opacity 220ms var(--ease);
 }
-.surface-probe::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -7px;
-  width: 30px;
-  height: 5px;
-  border-top: 1px solid currentColor;
-  border-left: 1px solid currentColor;
-  opacity: 0.5;
-}
-.surface-probe > span {
-  position: absolute;
-  opacity: 0;
-  transition: opacity var(--duration) var(--ease);
-}
-.surface-probe i {
-  font-style: normal;
-  opacity: 0.5;
-  padding-inline: 4px;
-}
-[data-probing] .surface-probe,
-[data-layer="interface"] .probe-interface,
-[data-layer="data"] .probe-data {
+.hero-title[data-probing] .title-ink {
   opacity: 1;
 }
 .experience-entry {
@@ -132,7 +115,7 @@
   (hover: none),
   (pointer: coarse),
   (max-width: 900px) {
-  .surface-probe {
+  .title-ink {
     display: none;
   }
   .hero-title .title-surface {

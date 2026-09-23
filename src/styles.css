@@ -1709,3 +1709,15 @@ details[open] summary svg {
     margin-left: 0;
   }
 }
+
+/* A fixed mobile header remains visible during native anchor navigation. */
+@media (max-width: 900px) {
+  .site-header { position: fixed; inset: 0 0 auto; }
+  #main { padding-top: 77px; }
+  #main-nav { max-height: calc(100dvh - 77px); overflow-y: auto; }
+}
+@media (max-width: 600px) {
+  #main { padding-top: 73px; }
+  #main-nav { max-height: calc(100dvh - 73px); }
+}
+@media print { #main { padding-top: 0; } }

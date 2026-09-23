@@ -9,10 +9,15 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const button = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
+  const openedWithKeyboard = useRef(false);
   const active = useActiveSection();
   useEffect(() => {
     if (!open) return;
-    header.current?.querySelector<HTMLAnchorElement>("#main-nav a")?.focus();
+    if (openedWithKeyboard.current) {
+      header.current
+        ?.querySelector<HTMLAnchorElement>("#main-nav a")
+        ?.focus({ preventScroll: true });
+    }
     const close = (event: PointerEvent) => {
       if (!header.current?.contains(event.target as Node)) setOpen(false);
     };
@@ -27,9 +32,10 @@ export function Header() {
       media.removeEventListener("change", resize);
     };
   }, [open]);
-  const navigate = (id: string) => {
+  const navigate = () => {
     setOpen(false);
-    document.getElementById(id)?.focus({ preventScroll: true });
+    // Keep native anchor scrolling, without moving focus during pointer activation.
+    // Keyboard users receive focus at the destination after the menu closes.
   };
   return (
     <header
@@ -49,7 +55,8 @@ export function Header() {
         if (
           event.relatedTarget &&
           !event.currentTarget.contains(event.relatedTarget)
-        ) setOpen(false);
+        )
+          setOpen(false);
       }}
     >
       <div className="reading-progress" aria-hidden="true" />
@@ -58,7 +65,11 @@ export function Header() {
           href="#home"
           className="wordmark"
           aria-label={`${personal.name}, ${t.nav.home}`}
-          onClick={() => navigate("home")}
+          onClick={(event) => {
+            navigate();
+            if (event.detail === 0)
+              document.getElementById("home")?.focus({ preventScroll: true });
+          }}
         >
           <span className="wordmark-symbol">
             lk<span>/</span>
@@ -79,7 +90,11 @@ export function Header() {
               key={id}
               href={`#${id}`}
               aria-current={active === id ? "location" : undefined}
-              onClick={() => navigate(id)}
+              onClick={(event) => {
+                navigate();
+                if (event.detail === 0)
+                  document.getElementById(id)?.focus({ preventScroll: true });
+              }}
             >
               <span className="nav-number" aria-hidden="true">
                 0{index + 1}
@@ -126,7 +141,10 @@ export function Header() {
             aria-expanded={open}
             aria-controls="main-nav"
             aria-label={open ? t.nav.close : t.nav.open}
-            onClick={() => setOpen(!open)}
+            onClick={(event) => {
+              openedWithKeyboard.current = event.detail === 0;
+              setOpen(!open);
+            }}
           >
             {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>

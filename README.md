@@ -72,7 +72,7 @@ LinkedIn y GitHub están configurados con las URLs proporcionadas. Los accesos d
 
 Las experiencias están ordenadas como se solicitó: Phinxlab, Aulasneo, H+Trace, Somos Olea. Cada entrada contiene identidad y fechas compartidas más `content.es` y `content.en` con rol, proyecto, descripción, contexto, contribuciones e impacto. Para sumar otra experiencia, agregar un objeto de tipo `Experience`; no hace falta editar componentes.
 
-Las fechas conocidas y los hechos de H+Trace proceden del CV original proporcionado. Su impacto no está documentado: permanece en `null` y muestra un estado pendiente. Somos Olea incluye el proyecto y las contribuciones proporcionadas, traducidas al español e inglés. El período es septiembre–octubre de 2021. Conserva TODO_IMPACT hasta disponer de resultados verificables. No se muestran esos identificadores internos al visitante; se presentan placeholders traducidos.
+Las fechas conocidas y los hechos de H+Trace proceden del CV original y de la información proporcionada. Las cuatro experiencias incluyen entregables concretos en español e inglés, sin métricas inventadas. Somos Olea corresponde a septiembre–octubre de 2021. Java se retiró de las experiencias por indicación del autor.
 
 Formato de fechas: `YYYY-MM`; se muestran con `Intl.DateTimeFormat`. `current: true` identifica la experiencia actual. Los casos comparten el mismo componente, son desplegables nativos y no contienen material propietario.
 
@@ -119,6 +119,6 @@ Decisiones y fuentes: [docs/DESIGN.md](docs/DESIGN.md). Verificación: [docs/QA.
 
 ## Interacción de superficie
 
-El hero revela una relación técnica bajo el título al mover un mouse: React → TypeScript o Node.js → PostgreSQL. El desplazamiento del título está limitado a 1,5 px. La lógica vive en `src/hooks/useSurfaceProbe.ts`; los detalles visuales en `src/styles/signature.css`. Usa refs, variables CSS y requestAnimationFrame, sin actualizaciones React por movimiento. Cancela frames al salir, hacer scroll, cambiar preferencias o desmontarse. Se desactiva en touch, pantallas menores a 901 px y reduced motion.
+El hero revela una malla técnica dentro de las letras mediante una lente circular que sigue el mouse con inercia breve. El título permanece fijo; no aparecen etiquetas flotantes. La lógica vive en `src/hooks/useSurfaceProbe.ts`; los detalles visuales en `src/styles/signature.css`. Usa refs, variables CSS y requestAnimationFrame, sin actualizaciones React por movimiento. Cancela frames al salir, hacer scroll, cambiar preferencias o desmontarse. Se desactiva en touch, pantallas menores a 901 px y reduced motion.
 
 Las tecnologías relacionadas se destacan juntas mediante CSS y el índice de experiencia sigue la lectura usando el listener de scroll existente. El único easter egg es un mensaje opcional en la consola. No se añadieron dependencias, colores ni fuentes. En PowerShell, usar `npm.cmd` evita el bloqueo de `npm.ps1` sin modificar políticas del sistema.

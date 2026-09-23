@@ -51,3 +51,7 @@ Antes de publicación real: completar enlaces sociales, dominio y los campos pen
 - Reduced motion y touch: pruebas unitarias del controlador verifican bloqueo de seguimiento, cancelación al cambiar preferencias y limpieza de listeners. CSS revisado: sonda oculta y transforms desactivados. La herramienta del navegador no expone emulación de esta preferencia; no se afirma una prueba visual bajo emulación.
 - Lint, TypeScript (incluido en build), build de producción y 12 tests aprobados.
 - JS ~84 kB gzip, CSS ~12 kB gzip. Sin dependencias nuevas. No se realizó un perfil de FPS ni una auditoría Lighthouse.
+
+## Revisión del hero: lente tipográfica
+
+Se retiraron etiquetas y parallax del título. La nueva capa decorativa revela contornos y una malla dentro de las letras, recortada a un círculo de 125 px de radio. Revisada visualmente en ambos temas a 1440 px; transform del texto permanece en none. A 390 px se desactiva la capa. Pruebas de touch, cambio de preferencia y cancelación de frames adaptadas a la lente. No se añadieron dependencias.

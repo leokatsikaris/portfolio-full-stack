@@ -108,9 +108,9 @@ test("experience order, known H+Trace facts and explicit placeholders are preser
   assert.equal(experience[2].start, "2022-02");
   assert.equal(
     experience[2].stack.join("|"),
-    "React|GraphQL|Recharts|CSS|TypeScript|Java",
+    "React|GraphQL|Recharts|CSS|TypeScript",
   );
-  assert.equal(experience[2].content.es.impact, null);
+  assert.ok(experience[2].content.es.impact.includes("GraphQL"));
   const pending = experience[3];
   assert.equal(
     pending.content.es.role,
@@ -119,8 +119,12 @@ test("experience order, known H+Trace facts and explicit placeholders are preser
   assert.equal(pending.start, "2021-09");
   assert.equal(pending.end, "2021-10");
   assert.ok(pending.stack.includes("Sequelize"));
-  assert.equal(pending.pending.period, undefined);
-  assert.equal(pending.content.es.impact, null);
+  assert.equal(pending.pending?.period, undefined);
+  assert.ok(pending.content.es.impact.includes("turnos"));
+  for (const item of experience) {
+    assert.ok(!item.stack.includes("Java"));
+    assert.ok(item.content.es.impact && item.content.en.impact);
+  }
   assert.ok(pending.content.en.work.some((text) => text.includes("wishlist")));
 });
 test("text and accent tokens satisfy WCAG AA contrast in both themes", () => {

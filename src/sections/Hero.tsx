@@ -24,11 +24,16 @@ export function Hero() {
         {t.hero.name} {personal.name}
         <span className="hero-name-line" aria-hidden="true" />
       </p>
-      <div className="hero-composition" ref={surface}>
-        <h1 className="hero-title">
+      <div className="hero-composition">
+        <h1 className="hero-title" ref={surface}>
           <span className="title-line">
             <span>
-              <span className="title-surface">{t.hero.titleFirst}</span>
+              <span className="title-surface">
+                {t.hero.titleFirst}
+                <span className="title-ink" aria-hidden="true">
+                  {t.hero.titleFirst}
+                </span>
+              </span>
             </span>
           </span>
           <span className="title-line">
@@ -36,6 +41,9 @@ export function Hero() {
               <span className="title-surface">
                 {t.hero.titleSecond}
                 <span className="title-period">.</span>
+                <span className="title-ink" aria-hidden="true">
+                  {t.hero.titleSecond}.
+                </span>
               </span>
             </span>
           </span>
@@ -49,14 +57,6 @@ export function Hero() {
             React · TypeScript
             <br />
             Node.js · PostgreSQL
-          </span>
-        </div>
-        <div className="surface-probe mono" aria-hidden="true">
-          <span className="probe-interface">
-            &#123; React <i>→</i> TypeScript &#125;
-          </span>
-          <span className="probe-data">
-            &#123; Node.js <i>→</i> PostgreSQL &#125;
           </span>
         </div>
       </div>

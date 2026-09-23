@@ -100,7 +100,7 @@ export const es = {
     project: "Producto / proyecto",
     context: "El contexto",
     work: "Mi contribución",
-    impact: "Lo que aporta",
+    impact: "Lo que aporté",
     technologies: "Tecnologías",
     pendingTitle: "Una experiencia por documentar.",
     pendingDescription:
