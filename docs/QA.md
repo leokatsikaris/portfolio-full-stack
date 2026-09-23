@@ -55,3 +55,12 @@ Antes de publicación real: completar enlaces sociales, dominio y los campos pen
 ## Revisión del hero: lente tipográfica
 
 Se retiraron etiquetas y parallax del título. La nueva capa decorativa revela contornos y una malla dentro de las letras, recortada a un círculo de 125 px de radio. Revisada visualmente en ambos temas a 1440 px; transform del texto permanece en none. A 390 px se desactiva la capa. Pruebas de touch, cambio de preferencia y cancelación de frames adaptadas a la lente. No se añadieron dependencias.
+
+## Correcciones de navegación y detalles — 23/09/2026
+
+- Java retirado de las experiencias; aportes concretos ES/EN reemplazan impactos pendientes sin agregar métricas.
+- Menú mobile: foco inicial solo al abrir con teclado; cabecera fija con espacio reservado. Verificados los cuatro destinos a 390 px, header top=0, cierre del menú y Enter/Escape.
+- Capa tipográfica ampliada para incluir extremos y descendentes. Inspección visual de k y p, tema claro/oscuro a 1440 px.
+- Flechas del hero e índice de experiencias reemplazadas por ArrowUpRight de Lucide.
+- Experiencias cerradas: contenido con altura cero y sin padding inferior del artículo. Apertura de Aulasneo verificada.
+- ESLint, TypeScript/build y 13 tests aprobados. Sin warnings/errors de consola durante la revisión. Sin prueba en dispositivo físico.

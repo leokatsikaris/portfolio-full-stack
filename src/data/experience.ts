@@ -9,6 +9,7 @@ export const experience: Experience[] = [
     current: true,
     stack: [
       "React",
+      "Next.js",
       "TypeScript / JavaScript",
       "Node.js",
       "Express",
@@ -17,7 +18,6 @@ export const experience: Experience[] = [
       "Material UI",
       "AWS",
       "Git",
-      "Spring Boot",
       "Scrum",
     ],
     content: {
@@ -69,10 +69,11 @@ export const experience: Experience[] = [
     end: "2024-11",
     stack: [
       "React",
+      "Next.js",
       "TypeScript",
-      "Spring Boot",
       "Node.js",
       "Python",
+      "Django",
       "CSS",
       "AWS",
     ],

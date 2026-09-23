@@ -26,7 +26,8 @@
 }
 .hero-title .title-ink {
   position: absolute;
-  inset: 0;
+  /* Include glyph overhang (k) and descenders (p) in background-clip:text. */
+  inset: 0 -0.2em -0.2em 0;
   pointer-events: none;
   user-select: none;
   opacity: 0;

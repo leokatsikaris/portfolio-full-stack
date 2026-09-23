@@ -49,9 +49,7 @@ export function Hero() {
           </span>
         </h1>
         <div className="hero-side">
-          <span className="hero-cross" aria-hidden="true">
-            ↗
-          </span>
+          <ArrowUpRight className="hero-cross" strokeWidth={1.5} aria-hidden="true" />
           <p>{t.hero.subtitle}</p>
           <span className="mono">
             React · TypeScript

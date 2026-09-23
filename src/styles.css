@@ -358,6 +358,9 @@ svg {
 }
 .hero-cross {
   display: block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
   font-size: 7.5rem;
   line-height: 1.1;
   color: var(--accent);
@@ -738,7 +741,7 @@ h2 {
 .experience-aside nav a > .mono {
   color: var(--muted);
 }
-.experience-aside nav a > span:last-child {
+.experience-aside nav a > svg:last-child {
   margin-left: auto;
   color: var(--accent);
 }
@@ -837,6 +840,12 @@ details[open] summary svg {
   grid-template-columns: 1fr 1.4fr;
   gap: 32px;
   padding-top: 30px;
+}
+details:not([open]) > .case-body {
+  display: none;
+}
+.experience-entry:has(details:not([open])) {
+  padding-bottom: 0;
 }
 .case-body .eyebrow {
   font-size: 0.75rem;

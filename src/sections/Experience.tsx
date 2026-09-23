@@ -1,4 +1,4 @@
-import { LockKeyhole } from "lucide-react";
+import { LockKeyhole, ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
 import { ExperienceEntry } from "../components/ExperienceEntry";
 import { experience } from "../data/experience";
@@ -26,7 +26,7 @@ export function Experience() {
               <a key={item.id} href={`#${item.id}`}>
                 <span className="mono">0{index + 1}</span>
                 {item.company}
-                <span aria-hidden="true">↗</span>
+                <ArrowUpRight size={16} aria-hidden="true" />
               </a>
             ))}
           </nav>
