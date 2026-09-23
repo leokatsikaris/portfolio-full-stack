@@ -265,19 +265,19 @@ svg {
     transform 250ms var(--ease),
     opacity 200ms;
 }
-.sun-icon {
+.moon-icon {
   opacity: 1;
   transform: rotate(0);
 }
-.moon-icon {
+.sun-icon {
   opacity: 0;
   transform: translateY(25px) rotate(-60deg);
 }
-[data-theme="dark"] .sun-icon {
+[data-theme="dark"] .moon-icon {
   opacity: 0;
   transform: translateY(-25px) rotate(60deg);
 }
-[data-theme="dark"] .moon-icon {
+[data-theme="dark"] .sun-icon {
   opacity: 1;
   transform: none;
 }
