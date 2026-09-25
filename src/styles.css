@@ -342,7 +342,11 @@ svg {
 .title-line {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.065em;
+  /* Manrope's descenders extend beyond its tight line box. Reserve paint
+     space in em so the complete outline survives at every title size.
+     Compensate with margin to preserve the original layout. */
+  padding-bottom: 0.25em;
+  margin-bottom: -0.185em;
 }
 .title-line:nth-child(2) {
   margin-left: 8%;
