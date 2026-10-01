@@ -16,16 +16,18 @@ test("production HTML has SEO metadata and a local entry point", async () => {
   assert.match(html, /type="module"[^>]+src="\/assets\//);
   assert.doesNotMatch(html, /example\.com|undefined|localhost|__SEO_/);
 });
-test("the original CV is preserved in the production output", async () => {
+for (const filename of ["leonel-katsikaris-cv.pdf", "leonel-katsikaris-cv-en.pdf"]) {
+test(`${filename} is preserved in the production output`, async () => {
   const source = await readFile(
-    new URL("../public/leonel-katsikaris-cv.pdf", import.meta.url),
+    new URL(`../public/${filename}`, import.meta.url),
   );
   const output = await readFile(
-    new URL("../dist/leonel-katsikaris-cv.pdf", import.meta.url),
+    new URL(`../dist/${filename}`, import.meta.url),
   );
   assert.equal(source.subarray(0, 5).toString(), "%PDF-");
   assert.deepEqual(output, source);
 });
+}
 test("Vercel is configured for the verified static build", async () => {
   const config = JSON.parse(
     await readFile(new URL("../vercel.json", import.meta.url), "utf8"),

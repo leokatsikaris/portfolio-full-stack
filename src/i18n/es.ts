@@ -25,6 +25,7 @@ export const es = {
     copyFailed: "No se pudo copiar. Seleccioná la dirección que aparece debajo.",
     skip: "Saltar al contenido",
     cv: "Descargar CV",
+    cvLanguages: { es: "CV en español", en: "CV en inglés" },
     cvPending: "CV próximamente",
     email: "Email",
     pendingLink: "Enlace pendiente",

@@ -33,6 +33,9 @@ export default defineConfig(({ mode }) => {
       },
     ],
     define: {
+      __CV_EN_AVAILABLE__: JSON.stringify(
+        existsSync("public/leonel-katsikaris-cv-en.pdf"),
+      ),
       __CV_AVAILABLE__: JSON.stringify(
         existsSync("public/leonel-katsikaris-cv.pdf"),
       ),

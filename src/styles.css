@@ -441,6 +441,11 @@ svg {
   gap: 28px;
   margin-top: 24px;
 }
+.cv-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
 .cv-link {
   display: inline-flex;
   align-items: center;

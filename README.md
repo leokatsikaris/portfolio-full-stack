@@ -97,7 +97,7 @@ Para volver a la preferencia del sistema, eliminar `portfolio.theme` de localSto
 
 ## CV
 
-El archivo original permanece en `public/leonel-katsikaris-cv.pdf`, sin modificaciones. Sustituirlo para actualizarlo. Vite detecta si existe al iniciar/build: si falta, los enlaces muestran un mensaje traducido de disponibilidad pendiente. Reiniciar Vite tras agregarlo o quitarlo. El test de integridad presupone que el CV de esta entrega está presente.
+Los archivos originales se conservan sin modificaciones: español en `public/leonel-katsikaris-cv.pdf` e inglés en `public/leonel-katsikaris-cv-en.pdf`. Sustituir cada PDF para actualizarlo. Ambas opciones aparecen en la introducción y el contacto, independientemente del idioma de la interfaz. Sus rutas se configuran en `src/config/personal.ts` y las etiquetas en `src/i18n/`. Vite detecta cada archivo al iniciar/build: si falta, su enlace muestra un mensaje traducido de disponibilidad pendiente. Reiniciar Vite tras agregarlo o quitarlo. Los tests de integridad verifican ambos archivos en el build.
 
 ## Deployment en Vercel
 

@@ -2,7 +2,10 @@ export const personal = {
   name: "Leonel Katsikaris",
   role: "Fullstack Developer",
   email: "leonelkatsikaris@gmail.com",
-  cv: { path: "/leonel-katsikaris-cv.pdf", available: __CV_AVAILABLE__ },
+  cv: [
+    { language: "es", path: "/leonel-katsikaris-cv.pdf", available: __CV_AVAILABLE__ },
+    { language: "en", path: "/leonel-katsikaris-cv-en.pdf", available: __CV_EN_AVAILABLE__ },
+  ] as const,
 };
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/leonel-katsikaris/",
